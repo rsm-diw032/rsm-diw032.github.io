@@ -1,0 +1,14 @@
+---
+title: "Dingran Wang"
+image: "image/low quality2.png"
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      href: 172737dd@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/dingran-wang-596810252/
+---
+
+Heyyy!
+
