@@ -1,8 +1,8 @@
 ---
 title: "Multinomial Logit Model"
-author: "Your Name"
-date: today
-format: pdf
+author: "Dingran Wang"
+date: 05/18/2025
+callout-appearance: minimal
 ---
 
 
