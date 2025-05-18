@@ -243,7 +243,7 @@ window.Quarto = {
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
-<div id="d3e2144c" class="cell" data-execution_count="2">
+<div id="b0f925f1" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -263,7 +263,7 @@ Name: patents, dtype: float64</code></pre>
 <p>Means: Non-customers: 3.47 patents on average Customers: 4.13 patents on average Difference: +0.66 patents for customers</p>
 <p>Conclusion Customers of Blueprinty have, on average, more patents. This suggests a potential association, though causality cannot be confirmed without controlling for other factors like firm age and region.</p>
 <p>Blueprinty customers are not selected at random. It may be important to account for systematic differences in the age and regional location of customers vs non-customers.</p>
-<div id="c8e41d3a" class="cell" data-execution_count="3">
+<div id="a1be6ced" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -272,7 +272,7 @@ Name: patents, dtype: float64</code></pre>
 </div>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3r/3rw9brm96g5_0z5pk8thcr040000gn/T/ipykernel_47929/2098656923.py:14: FutureWarning:
+<pre><code>/var/folders/3r/3rw9brm96g5_0z5pk8thcr040000gn/T/ipykernel_97381/2098656923.py:14: FutureWarning:
 
 
 
@@ -306,7 +306,7 @@ Name: age, dtype: float64</code></pre>
 <p>Let ( Y_1, Y_2, , Y_n ) be independent observations such that<br>
 ( Y_i () ), for ( i = 1, , n ).</p>
 <p>The likelihood function is: [ L() = _{i=1}^n = e^{-n} <sup>{<em>{i=1}^n Y_i} </em>{i=1}</sup>n ]</p>
-<div id="026b3c65" class="cell" data-execution_count="4">
+<div id="791621c5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> gammaln  </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -327,7 +327,7 @@ Name: age, dtype: float64</code></pre>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(<span class="op">-</span>lmbda <span class="op">+</span> y <span class="op">*</span> np.log(lmbda) <span class="op">-</span> gammaln(y <span class="op">+</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f7f22c17" class="cell" data-execution_count="5">
+<div id="201dc2b7" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -345,7 +345,7 @@ Name: age, dtype: float64</code></pre>
 <p>So the maximum likelihood estimator is:</p>
 <p>[ _{} = {Y} ]</p>
 <p>This result makes intuitive sense because the Poisson distribution’s mean is ( ), so the sample mean is a natural estimator.</p>
-<div id="e51b0916" class="cell" data-execution_count="6">
+<div id="653b4a75" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>MLE of lambda: 3.6846662953477973</code></pre>
 </div>
@@ -354,7 +354,7 @@ Name: age, dtype: float64</code></pre>
 <section id="estimation-of-poisson-regression-model" class="level3">
 <h3 class="anchored" data-anchor-id="estimation-of-poisson-regression-model">Estimation of Poisson Regression Model</h3>
 <p>Next, we extend our simple Poisson model to a Poisson Regression Model such that <span class="math inline">\(Y_i = \text{Poisson}(\lambda_i)\)</span> where <span class="math inline">\(\lambda_i = \exp(X_i'\beta)\)</span>. The interpretation is that the success rate of patent awards is not constant across all firms (<span class="math inline">\(\lambda\)</span>) but rather is a function of firm characteristics <span class="math inline">\(X_i\)</span>. Specifically, we will use the covariates age, age squared, region, and whether the firm is a customer of Blueprinty.</p>
-<div id="4bca268f" class="cell" data-execution_count="7">
+<div id="e6e3949d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X_raw <span class="op">=</span> df1[[<span class="st">"age"</span>, <span class="st">"region"</span>, <span class="st">"iscustomer"</span>]].copy()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>X_raw[<span class="st">"age_squared"</span>] <span class="op">=</span> X_raw[<span class="st">"age"</span>] <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -408,43 +408,43 @@ Name: age, dtype: float64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">intercept</td>
-<td>-0.509987</td>
-<td>0.158114</td>
+<td>-0.509991</td>
+<td>0.172089</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">age</td>
-<td>0.148704</td>
-<td>0.012043</td>
+<td>0.148706</td>
+<td>0.014316</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">iscustomer</td>
-<td>0.207612</td>
-<td>0.026017</td>
+<td>0.207609</td>
+<td>0.034997</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">age_squared</td>
 <td>-0.002972</td>
-<td>0.000224</td>
+<td>0.000259</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">region_Northeast</td>
-<td>0.029156</td>
-<td>0.037317</td>
+<td>0.029155</td>
+<td>0.044931</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">region_Northwest</td>
-<td>-0.017564</td>
-<td>0.048779</td>
+<td>-0.017578</td>
+<td>0.060654</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">region_South</td>
-<td>0.056580</td>
-<td>0.047959</td>
+<td>0.056565</td>
+<td>0.058302</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">region_Southwest</td>
-<td>0.050580</td>
-<td>0.042857</td>
+<td>0.050567</td>
+<td>0.049927</td>
 </tr>
 </tbody>
 </table>
@@ -454,7 +454,7 @@ Name: age, dtype: float64</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>False
 Desired error not necessarily achieved due to precision loss.
-3258.072164420011</code></pre>
+3258.0721651862477</code></pre>
 </div>
 </div>
 <p>Interpretation Intercept: Baseline log patent count is −0.51 when all predictors are 0.</p>
@@ -462,9 +462,9 @@ Desired error not necessarily achieved due to precision loss.
 <p>Age Squared: Negative (−0.003), indicating diminishing returns to age.</p>
 <p>Is Customer: Positive and meaningful (+0.21); Blueprinty customers have about 23% more patents on average (exp(0.21) ≈ 1.23).</p>
 <p>Region Dummies: Coefficients are small and mixed, suggesting little regional effect on patent output.</p>
-<div id="323f409d" class="cell" data-execution_count="8">
+<div id="d1f9715d" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
-<pre><code>Estimated average treatment effect of Blueprinty: 0.7928551584470239</code></pre>
+<pre><code>Estimated average treatment effect of Blueprinty: 0.7928415279956313</code></pre>
 </div>
 </div>
 <p>Conclusion On average, firms using Blueprinty are predicted to receive 0.79 more patents over 5 years than if they didn’t use the software, controlling for age and region. This suggests a meaningful positive effect of Blueprinty’s software on patent success.</p>
@@ -504,7 +504,7 @@ Variable Definitions
 </div>
 </div>
 <p><em>todo: Assume the number of reviews is a good proxy for the number of bookings. Perform some exploratory data analysis to get a feel for the data, handle or drop observations with missing values on relevant variables, build one or more models (e.g., a poisson regression model for the number of bookings as proxied by the number of reviews), and interpret model coefficients to describe variation in the number of reviews as a function of the variables provided.</em></p>
-<div id="d0050b28" class="cell" data-execution_count="9">
+<div id="e630ec53" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">"/Users/danielwang/Desktop/UCSD Spring/MGTA495 Marketing Analytics/Website/blog/project2/data/airbnb.csv"</span>)</span>
@@ -556,7 +556,7 @@ Variable Definitions
 <span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>glm_airbnb_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/3r/3rw9brm96g5_0z5pk8thcr040000gn/T/ipykernel_47929/3115416754.py:34: SettingWithCopyWarning:
+<pre><code>/var/folders/3r/3rw9brm96g5_0z5pk8thcr040000gn/T/ipykernel_97381/3115416754.py:34: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -564,7 +564,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/3r/3rw9brm96g5_0z5pk8thcr040000gn/T/ipykernel_47929/3115416754.py:35: SettingWithCopyWarning:
+/var/folders/3r/3rw9brm96g5_0z5pk8thcr040000gn/T/ipykernel_97381/3115416754.py:35: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
